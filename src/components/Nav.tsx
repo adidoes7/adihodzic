@@ -26,27 +26,10 @@ export default function Nav() {
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5 sm:px-8">
         <Link
           href="/"
-          className="flex items-center gap-2.5"
+          className="font-display text-2xl font-semibold tracking-tight"
           onClick={() => setOpen(false)}
         >
-          <span
-            aria-hidden
-            className="h-12 w-12 shrink-0"
-            style={{
-              backgroundColor: "var(--foreground)",
-              WebkitMaskImage: "url(/images/brand/badge-mask.png)",
-              maskImage: "url(/images/brand/badge-mask.png)",
-              WebkitMaskSize: "contain",
-              maskSize: "contain",
-              WebkitMaskRepeat: "no-repeat",
-              maskRepeat: "no-repeat",
-              WebkitMaskPosition: "center",
-              maskPosition: "center",
-            }}
-          />
-          <span className="font-display text-2xl font-semibold tracking-tight">
-            Adi Hodzic
-          </span>
+          Adi Hodzic
         </Link>
 
         <nav className="hidden items-center gap-8 sm:flex">

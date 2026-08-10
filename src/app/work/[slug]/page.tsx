@@ -18,8 +18,18 @@ export async function generateMetadata({
   const study = getCaseStudy(slug);
   if (!study) return {};
   return {
-    title: `${study.title} - Adi Hodzic`,
+    title: study.title,
     description: study.oneLiner,
+    openGraph: {
+      title: study.title,
+      description: study.oneLiner,
+      type: "article",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: study.title,
+      description: study.oneLiner,
+    },
   };
 }
 
