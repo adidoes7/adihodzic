@@ -42,7 +42,7 @@ export type CaseStudy = {
 export const caseStudies: CaseStudy[] = [
   {
     slug: "wealth-management-platform",
-    title: "Rebuilding the Checklist at the core of a wealth management platform",
+    title: "Rebuilding the core workflow of a wealth management platform",
     oneLiner:
       "As lead product designer for over three years, I reworked the Checklist advisors relied on throughout every client profile - not a one-time setup step, but the hub they returned to again and again - then built out the design system, recommendation tools, and analytics dashboards on top of it.",
     company: "US Wealth Management Firm",
@@ -53,7 +53,7 @@ export const caseStudies: CaseStudy[] = [
     gradient: ["#0b2545", "#5b9ce6"],
     image: "/images/case-studies/wealth-platform/overview.jpg",
     problem:
-      "When I joined, the platform's Checklist - the hub advisors returned to again and again as they worked a client profile, not a one-time setup step - was supposed to be the core of the app, but it wasn't working. It asked for too much at once, the process wasn't fluid, and advisors kept getting stuck on things like document processing and statement extraction every time they came back to it. There was also no design system to speak of - just a set of fonts and colors the client liked - so nothing about the interface stayed consistent as new features got added. Over the next three-plus years, working directly with large advisory firms serving high-net-worth clients, we rebuilt the Checklist experience from the ground up, then used that same foundation to build out the platform's recommendation tools, analytics dashboards, and reporting, tackling specific parts as customer feedback came in and new features got scoped.",
+      "When I joined, at the center of that workflow was the Checklist - the hub advisors returned to again and again as they worked a client profile, not a one-time setup step. It was supposed to be the core of the app, but it wasn't working. It asked for too much at once, the process wasn't fluid, and advisors kept getting stuck on things like document processing and statement extraction every time they came back to it. There was also no design system to speak of - just a set of fonts and colors the client liked - so nothing about the interface stayed consistent as new features got added. Over the next three-plus years, working directly with large advisory firms serving high-net-worth clients, we rebuilt the Checklist experience from the ground up, then used that same foundation to build out the platform's recommendation tools, analytics dashboards, and reporting, tackling specific parts as customer feedback came in and new features got scoped.",
     context: [
       { label: "Team", value: "Embedded design partner to the COO, CTO, and product managers" },
       { label: "Scope", value: "Checklist, design system, portfolio recommendations, analytics dashboards, reporting" },
@@ -168,9 +168,9 @@ export const caseStudies: CaseStudy[] = [
       },
     ],
     outcome: [
-      { metric: "489 screens", label: "designed and deployed across dashboards, the query builder & plotting toolkit, and N Portal" },
-      { metric: "100% audit traceability", label: "across analytical outputs - a hard requirement for software used in nuclear safeguards verification" },
-      { metric: "Automated handoffs", label: "data moved between stages securely and automatically instead of through manual handoff" },
+      { metric: "1 Integrated Platform", label: "consolidated previously fragmented scientific workflows" },
+      { metric: "489 Product Screens", label: "designed across desktop, analytical, reporting, and field workflows" },
+      { metric: "Full Workflow Traceability", label: "maintained auditability across data collection, analysis, and reporting" },
     ],
     outcomeNote:
       "Figures are drawn from a public case study Rokolabs (the agency I worked through on this engagement) has since published.",
@@ -343,8 +343,8 @@ export const caseStudies: CaseStudy[] = [
     ],
     decisions: [
       {
-        title: "Fought for the timeline, not kanban, as the primary view",
-        body: "The client wanted a kanban board as the primary view, most likely because that's what recent PM tools had trained them to expect. I pushed back: kanban answers 'what is everyone working on right now,' but a multi-year drug-development program needs to answer 'where is this program, what depends on what, and are we still on track' - a different question kanban isn't built to show. I won the argument for a horizontal timeline as the primary view instead - phases, milestones, dependencies, target dates, and parallel workstreams all visible together - with kanban still available, just not the front door.",
+        title: "Landed on the timeline, not kanban, as the primary view",
+        body: "The client wanted a kanban board as the primary view, most likely because that's what recent PM tools had trained them to expect. I elaborated that kanban answers 'what is everyone working on right now,' but a multi-year drug-development program needs to answer 'where is this program, what depends on what, and are we still on track' - a different question kanban isn't built to show. Testing both models against the actual program structure made the trade-off clear, and we aligned on the horizontal timeline as the primary view with phases, milestones, dependencies, target dates, and parallel workstreams all visible together - with kanban still available, just not the front door.",
       },
       {
         title: "Kept status indicators consistent across every view",
@@ -352,19 +352,19 @@ export const caseStudies: CaseStudy[] = [
       },
     ],
     outcome: [
-      { metric: "Timeline over kanban", label: "won the argument for a phase-and-dependency timeline as the primary view, instead of the client's default kanban-first request" },
+      { metric: "Timeline over kanban", label: "aligned on a phase-and-dependency timeline as the primary view, after testing it against the client's initial kanban-first preference" },
       { metric: "One project-health view", label: "consistent status indicators across dashboards, kanban boards, and timelines" },
       { metric: "Built from zero", label: "a new platform designed from scratch around real drug-development phases, not adapted from a generic PM tool" },
     ],
     outcomeNote:
       "Described qualitatively - exact adoption and efficiency figures weren't tracked in a form precise enough to cite here.",
     reflection:
-      "I went into this expecting the challenge to be visual - how to make a dense project tracker feel clean. It turned out to be structural and argumentative instead: getting the client to accept that kanban and a program timeline answer different questions mattered more than any layout decision, because every dashboard, board, and timeline downstream was only as useful as that one structural call. Get that wrong and no amount of visual polish fixes it.",
+      "I went into this expecting the challenge to be visual - how to make a dense project tracker feel clean. It turned out to be structural instead: helping the client see that kanban and a program timeline answer different questions mattered more than any layout decision, because every dashboard, board, and timeline downstream was only as useful as that one structural call. Get that wrong and no amount of visual polish fixes it.",
     screenshots: [
       {
         src: "/images/case-studies/life-sciences-project-platform/timeline-view.jpg",
         alt: "Program timeline view showing pharmaceutical projects as horizontal bars across weekly columns, with phase milestones like Submission to Health Authority and Pre-Approval, with logo blurred",
-        caption: "The timeline view I fought for as primary - phases, milestones, and target dates laid out across time, answering 'are we on track' instead of just 'what's in progress.'",
+        caption: "The timeline view we landed on as primary - phases, milestones, and target dates laid out across time, answering 'are we on track' instead of just 'what's in progress.'",
       },
       {
         src: "/images/case-studies/life-sciences-project-platform/kanban-view.jpg",
