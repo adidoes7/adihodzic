@@ -28,7 +28,7 @@ export type CaseStudy = {
     label: string;
   }[];
   outcomeNote: string;
-  reflection: string;
+  reflection: string | string[];
   screenshots?: {
     src: string;
     alt: string;
@@ -174,8 +174,11 @@ export const caseStudies: CaseStudy[] = [
     ],
     outcomeNote:
       "Figures are drawn from a public case study Rokolabs (the agency I worked through on this engagement) has since published.",
-    reflection:
-      "I never sat with the scientists who'd actually use this, and for a while that felt like a gap I should be compensating for. It wasn't. Our project manager's daily, firsthand knowledge of how IAEA HQ actually worked was more reliable than a handful of remote user interviews would have been anyway. The real lesson was trusting that proxy relationship fully, instead of treating it as a lesser substitute for research I was never going to get.",
+    reflection: [
+      "The biggest limitation of this project was also the one I had the least control over: I couldn't speak directly with the scientists using the system or work with real production data.",
+      "Our project manager had regular access to the IAEA team and became the bridge between their domain knowledge and our product decisions. I learned to make that relationship much more structured: document assumptions, identify what had been confirmed by specialists, and separate it from what we were still inferring as a product team.",
+      "If I had direct user access, I would add observation and usability testing around the most specialised workflows, particularly the Query Builder, plotting tools and field collection experience. Those are exactly the areas where seeing how scientists work would give you information that requirements alone can't.",
+    ],
     screenshots: [
       {
         src: "/images/case-studies/iaea-safeguards/before-after.jpg",

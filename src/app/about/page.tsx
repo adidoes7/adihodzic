@@ -6,14 +6,17 @@ export const metadata: Metadata = {
   description: "How I work, what I've learned, and where I've been.",
 };
 
-const principles = [
+const principles: { title: string; body: string | string[] }[] = [
   {
     title: "Evidence before opinion",
     body: "I default to bringing data or research into a room before I bring a point of view. It changes arguments from 'my taste vs. yours' into 'here's what we're actually optimizing for.'",
   },
   {
-    title: "Win the argument, don't just have the opinion",
-    body: "Nearly every project worth mentioning has one moment where a stakeholder's default choice and mine didn't match - a kanban board over a timeline, a drawer over a modal, a fully configurable dashboard over a structured one. Being right in your own head doesn't count; the job is making the case well enough that the harder, better answer actually ships.",
+    title: "Make the case, not just the design",
+    body: [
+      "Good product decisions rarely come from design working alone. When my recommendation differs from the initial direction, I try to make the trade-offs visible: what users need, what the product needs, what engineering can support, and what each option gives up.",
+      "Sometimes that changes the direction. Sometimes new evidence changes mine. The important part is getting to the strongest decision together, not being the person who wins the argument.",
+    ],
   },
   {
     title: "Systems over screens",
@@ -112,7 +115,11 @@ export default function AboutPage() {
           {principles.map((p) => (
             <div key={p.title} className="border-l-2 border-accent pl-6">
               <h3 className="text-lg font-semibold">{p.title}</h3>
-              <p className="mt-2 leading-relaxed text-muted">{p.body}</p>
+              {(Array.isArray(p.body) ? p.body : [p.body]).map((para, i) => (
+                <p key={i} className="mt-2 leading-relaxed text-muted">
+                  {para}
+                </p>
+              ))}
             </div>
           ))}
         </div>

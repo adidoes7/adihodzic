@@ -193,9 +193,17 @@ export default async function CaseStudyPage({
           <h2 className="font-display text-2xl font-semibold tracking-tight sm:text-3xl">
             What I&rsquo;d do differently
           </h2>
-          <p className="mt-4 font-serif text-2xl italic leading-relaxed text-foreground/90 sm:text-3xl">
-            &ldquo;{study.reflection}&rdquo;
-          </p>
+          {Array.isArray(study.reflection) ? (
+            <div className="mt-4 max-w-3xl space-y-4 text-lg leading-relaxed text-foreground/90">
+              {study.reflection.map((para, i) => (
+                <p key={i}>{para}</p>
+              ))}
+            </div>
+          ) : (
+            <p className="mt-4 font-serif text-2xl italic leading-relaxed text-foreground/90 sm:text-3xl">
+              &ldquo;{study.reflection}&rdquo;
+            </p>
+          )}
         </Reveal>
       </div>
 
