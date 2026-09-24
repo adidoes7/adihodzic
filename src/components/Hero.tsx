@@ -4,7 +4,7 @@ import { motion, useMotionValue, useSpring, AnimatePresence } from "framer-motio
 import { useRef, useState, type MouseEvent } from "react";
 import Magnetic from "@/components/Magnetic";
 
-const words = [
+const DEFAULT_WORDS = [
   "Product",
   "design",
   "for",
@@ -18,6 +18,15 @@ const words = [
   "job.",
 ];
 
+const DEFAULT_PARAGRAPH =
+  "I partner with founders and product teams to turn ideas into " +
+  "functional interfaces that ship - handling research, " +
+  "strategy, and hands-on craft in one person, with an AI-native " +
+  "process built for speed, without losing the craft. Most " +
+  "recently at Rokolabs LLC.";
+
+type CTA = { label: string; href: string };
+
 type Sparkle = {
   id: number;
   x: number;
@@ -30,7 +39,21 @@ type Sparkle = {
 let sparkleCounter = 0;
 const SPARKLE_COLORS = ["var(--accent)", "#ffd27a", "#ffffff"];
 
-export default function Hero() {
+export default function Hero({
+  badge = "Senior Product Designer · 10+ years · Fintech, GovTech, AI/ML, Regulated Industries",
+  words = DEFAULT_WORDS,
+  accentWord = "complexity",
+  paragraph = DEFAULT_PARAGRAPH,
+  primaryCta = { label: "See selected work", href: "#work" },
+  secondaryCta = { label: "About my process", href: "/about" },
+}: {
+  badge?: string;
+  words?: string[];
+  accentWord?: string;
+  paragraph?: string;
+  primaryCta?: CTA;
+  secondaryCta?: CTA;
+}) {
   const glowX = useMotionValue(0);
   const glowY = useMotionValue(0);
   const springX = useSpring(glowX, { stiffness: 60, damping: 20, mass: 0.4 });
@@ -133,7 +156,7 @@ export default function Hero() {
           className="mb-6 flex items-center gap-2 text-sm font-medium text-white/70"
         >
           <span className="h-2 w-2 rounded-full bg-accent" />
-          Senior Product Designer · 10+ years · Fintech, GovTech, AI/ML, Regulated Industries
+          {badge}
         </motion.p>
 
         <h1 className="max-w-[960px] font-display text-5xl font-semibold leading-[1.05] tracking-tight text-balance text-white sm:text-6xl md:text-7xl lg:text-[5.25rem]">
@@ -148,7 +171,9 @@ export default function Hero() {
                   ease: [0.16, 1, 0.3, 1],
                 }}
                 className={`inline-block ${
-                  word === "complexity" ? "font-serif italic font-normal text-accent" : ""
+                  word.toLowerCase() === accentWord.toLowerCase()
+                    ? "font-serif italic font-normal text-accent"
+                    : ""
                 }`}
               >
                 {word}
@@ -164,11 +189,7 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.7 }}
           className="mt-8 max-w-[960px] text-xl text-white/70"
         >
-          I partner with founders and product teams to turn ideas into
-          functional interfaces that ship - handling research,
-          strategy, and hands-on craft in one person, with an AI-native
-          process built for speed, without losing the craft. Most
-          recently at Rokolabs LLC.
+          {paragraph}
         </motion.p>
 
         <motion.div
@@ -179,18 +200,18 @@ export default function Hero() {
         >
           <Magnetic>
             <a
-              href="#work"
+              href={primaryCta.href}
               className="inline-block rounded-full bg-white px-6 py-3 text-sm font-medium text-[#0b0a08] transition-transform hover:-translate-y-0.5"
             >
-              See selected work
+              {primaryCta.label}
             </a>
           </Magnetic>
           <Magnetic>
             <a
-              href="/about"
+              href={secondaryCta.href}
               className="inline-block rounded-full border border-white/20 px-6 py-3 text-sm font-medium text-white transition-colors hover:border-accent hover:text-accent"
             >
-              About my process
+              {secondaryCta.label}
             </a>
           </Magnetic>
         </motion.div>
