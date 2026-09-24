@@ -17,11 +17,11 @@ export type CaseStudy = {
   }[];
   process: {
     title: string;
-    body: string;
+    body: string | string[];
   }[];
   decisions: {
     title: string;
-    body: string;
+    body: string | string[];
   }[];
   outcome: {
     metric: string;
@@ -62,8 +62,13 @@ export const caseStudies: CaseStudy[] = [
     ],
     process: [
       {
-        title: "Rebuilt the Checklist around granular, contextual steps instead of one dense page",
-        body: "The Checklist wasn't something advisors finished once and moved past - it was the hub they kept returning to throughout a client profile, and every time they came back it asked for too much at once. I broke it apart into smaller, contextual steps that surface right where an advisor already is, so they always see one clear next action instead of a dense page and dead ends like a document that wasn't parsing correctly.",
+        title: "Reworked the Checklist from repeated advisor friction, not from a UI preference",
+        body: [
+          "The problem became clear through repeated feedback from advisory firms and the product team: advisors weren't moving through the Checklist once and leaving it behind. They were returning to it throughout the client lifecycle, often after documents had been uploaded, processed or changed.",
+          "That meant the original model was wrong. We were treating the Checklist like a setup flow when advisors were actually using it as an ongoing workspace.",
+          "I mapped where people were getting blocked, particularly around document processing and statement extraction, and redesigned the experience around smaller contextual actions. Instead of sending advisors back to one dense page, the relevant next step could appear where they were already working.",
+          "The important decision wasn't making the Checklist visually simpler. It was changing the underlying interaction model once the way advisors actually used the product became clear.",
+        ],
       },
       {
         title: "Built the platform's first design system, then made it legible to AI agents",
@@ -76,23 +81,32 @@ export const caseStudies: CaseStudy[] = [
     ],
     decisions: [
       {
-        title: "Convinced leadership the Checklist was the product, not a gate in front of it",
-        body: "For a while, the Checklist was treated as a formality advisors passed through once on their way to the 'real' product elsewhere. I argued the opposite - advisors were going to live in this hub throughout a client's entire lifecycle, so a broken experience there meant a broken experience everywhere, every time they came back. Getting the COO and CTO to rework the core concept around that idea was the single biggest unlock of the whole engagement; once that shift happened, everything downstream went easier.",
+        title: "Reframed the Checklist as an ongoing workspace, not a setup gate",
+        body: [
+          "Early on, the Checklist was treated more like a setup step before advisors moved into the rest of the product. But repeated customer feedback and usage patterns showed something different: advisors kept returning to it throughout the client lifecycle.",
+          "I used that evidence to reframe the Checklist as an ongoing workspace rather than a gate. Aligning on that model with the COO, CTO and product team became an important foundation for the contextual next-step system and much of the work that followed.",
+        ],
       },
       {
-        title: "Pushed back on resizable, overlapping dashboard widgets",
-        body: "Stakeholders wanted the Profile Dashboard to support freely resizable, overlapping widgets so advisors could customize their view. I pushed back - that flexibility would have made the dashboard look inconsistent and cluttered for most advisors, for the benefit of a small number of power users. We kept a structured, opinionated layout instead, prioritizing a dashboard that looked right by default over one that was maximally configurable.",
+        title: "Kept dashboard customization focused on common advisor needs",
+        body: [
+          "We explored giving advisors freely resizable and overlapping dashboard widgets. The flexibility was attractive, but it also created problems with hierarchy, consistency and the amount of setup required before the dashboard became useful.",
+          "I recommended a more structured layout that worked well by default while still allowing the product to evolve around the information advisors actually needed most often.",
+        ],
       },
     ],
     outcome: [
       { metric: "Contextual, not dense", label: "the Checklist redesigned around small, always-forward steps advisors could pick up anytime, instead of one dense page" },
       { metric: "Design system, from zero", label: "full Figma system - typography, tokens, components, icons - plus a Design.md spec for AI agents" },
-      { metric: "~10x faster prototyping", label: "AI-assisted tools cut prototyping time enough to explore more directions before committing" },
+      { metric: "Faster design exploration", label: "AI-assisted prototyping reduced the time needed to turn ideas into interactive concepts, allowing more directions to be explored with stakeholders before committing to implementation" },
     ],
     outcomeNote:
       "Described qualitatively - exact adoption and efficiency figures weren't tracked in a form precise enough to cite here.",
-    reflection:
-      "Three years with the same stakeholders means you win some arguments, lose others, and a lot end up as compromises - that's normal. What actually mattered was picking the right fight. The checklist redesign was the one decision I pushed hardest for, because I could see it was the thing blocking everything else, even though it wasn't the most visually interesting problem on the table. Most of what I'd do differently next time is really just a version of: find that leverage point earlier, and spend less energy on the arguments that don't move the whole product.",
+    reflection: [
+      "The biggest lesson from working on the same product for more than three years was how much leverage sits in the underlying product model.",
+      "Once we understood that the Checklist was something advisors returned to throughout the client lifecycle, rather than a one-time setup flow, many downstream decisions became easier.",
+      "If I started the project again, I would spend more time early on mapping those repeated behaviours and identifying structural assumptions like that before getting too deep into individual features.",
+    ],
     confidentialityNote:
       "This project is under NDA - the company name and product branding have been withheld, and all screens shown have had logos removed.",
     screenshots: [
@@ -347,7 +361,11 @@ export const caseStudies: CaseStudy[] = [
     decisions: [
       {
         title: "Landed on the timeline, not kanban, as the primary view",
-        body: "The client wanted a kanban board as the primary view, most likely because that's what recent PM tools had trained them to expect. I elaborated that kanban answers 'what is everyone working on right now,' but a multi-year drug-development program needs to answer 'where is this program, what depends on what, and are we still on track' - a different question kanban isn't built to show. Testing both models against the actual program structure made the trade-off clear, and we aligned on the horizontal timeline as the primary view with phases, milestones, dependencies, target dates, and parallel workstreams all visible together - with kanban still available, just not the front door.",
+        body: [
+          "The initial direction was to make kanban the primary view. I mapped both kanban and timeline models against the questions teams actually needed to answer: what is in progress, which phase are we in, what depends on what, which milestones are approaching, and are we still on track.",
+          "Kanban worked well for current work state, but the timeline made phase gates, dependencies, target dates and parallel workstreams visible together. Based on that comparison, we aligned on the timeline as the primary program view while keeping kanban available for work-state tracking.",
+          "I elaborated that kanban answers 'what is everyone working on right now,' but a multi-year drug-development program needs to answer 'where is this program, what depends on what, and are we still on track' - a different question kanban isn't built to show. Testing both models against the actual program structure made the trade-off clear, and we aligned on the horizontal timeline as the primary view with phases, milestones, dependencies, target dates, and parallel workstreams all visible together - with kanban still available, just not the front door.",
+        ],
       },
       {
         title: "Kept status indicators consistent across every view",
@@ -419,17 +437,25 @@ export const caseStudies: CaseStudy[] = [
     ],
     decisions: [
       {
-        title: "Pushed for a multi-step modal over the client's preferred drawer",
-        body: "The original direction, and the client's preference, was a persistent side drawer for the API builder - it looks clean in a spec and preserves context in theory. Once I tried to fit the actual number of options and dependent steps the client needed into it, the drawer stopped being efficient. I pushed for a multi-step modal wizard instead, where each step's options depend on what was chosen before it, and won that argument by showing it handled the real complexity better than the drawer could.",
+        title: "Tested the drawer against the real configuration complexity",
+        body: [
+          "The initial direction for the API builder was a persistent side drawer. Before committing to it, I prototyped the experience using the actual service-specific configuration, dependencies and navigation users would need.",
+          "Once real content was introduced, the drawer became too constrained. A step-based modal gave each decision enough space, made dependencies between steps clearer, and still allowed users to move backward without losing progress.",
+          "Comparing the two approaches against the real content made the trade-off clear, and we aligned on the multi-step model.",
+        ],
       },
       {
-        title: "Kept shipping AI-assisted prototypes despite engineering pushback",
-        body: "Some developers weren't ready to build from AI-generated prototypes and wanted every spec done the traditional way. That friction slowed early handoff more than any design problem did. I kept prototypes detailed and consistent enough to hold up under scrutiny, treating the pushback as a reason to over-communicate intent rather than a reason to slow down how I worked.",
+        title: "Used AI-assisted prototypes to make implementation discussions more concrete",
+        body: [
+          "AI-assisted prototypes were still new to parts of the engineering team, so I didn't treat them as a replacement for established handoff practices.",
+          "I used them to demonstrate interactions, states and edge cases earlier, then supported them with the specifications and communication engineers needed for implementation.",
+          "That let me keep the speed of coded exploration without making the development process depend on a new tool or workflow the team hadn't adopted yet.",
+        ],
       },
     ],
     outcome: [
       { metric: "3 steps to 1 prompt", label: "collapsed a manual upload-check-build process into bulk upload plus a single AI-generated first pass" },
-      { metric: "Modal over drawer", label: "shipped a multi-step, dependent-step modal instead of the originally preferred drawer, after proving it fit the real complexity better" },
+      { metric: "Complex configuration, broken into clear dependent steps", label: "shipped a multi-step, dependent-step modal instead of the originally preferred drawer, after proving it fit the real complexity better" },
       { metric: "AI-generated, still legible", label: "workflow canvas redesigned to stay scannable even when AI generated most of a flow automatically" },
     ],
     outcomeNote:

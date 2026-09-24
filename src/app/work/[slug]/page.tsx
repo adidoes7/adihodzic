@@ -114,7 +114,11 @@ export default async function CaseStudyPage({
                 </span>
                 <div>
                   <h3 className="text-lg font-semibold">{step.title}</h3>
-                  <p className="mt-2 leading-relaxed text-muted">{step.body}</p>
+                  <div className="mt-2 space-y-3 leading-relaxed text-muted">
+                    {(Array.isArray(step.body) ? step.body : [step.body]).map((para, j) => (
+                      <p key={j}>{para}</p>
+                    ))}
+                  </div>
                 </div>
               </div>
             ))}
@@ -163,7 +167,11 @@ export default async function CaseStudyPage({
                 className="rounded-2xl border border-border bg-surface p-6"
               >
                 <h3 className="text-lg font-semibold">{d.title}</h3>
-                <p className="mt-2 leading-relaxed text-muted">{d.body}</p>
+                <div className="mt-2 space-y-3 leading-relaxed text-muted">
+                  {(Array.isArray(d.body) ? d.body : [d.body]).map((para, j) => (
+                    <p key={j}>{para}</p>
+                  ))}
+                </div>
               </div>
             ))}
           </div>
@@ -177,7 +185,9 @@ export default async function CaseStudyPage({
             {study.outcome.map((o) => (
               <div key={o.label} className="rounded-2xl border border-border p-6">
                 <p
-                  className="font-display text-4xl font-semibold"
+                  className={`font-display font-semibold break-words ${
+                    o.metric.length > 30 ? "text-2xl leading-snug" : "text-4xl"
+                  }`}
                   style={{ color: study.accent }}
                 >
                   {o.metric}
