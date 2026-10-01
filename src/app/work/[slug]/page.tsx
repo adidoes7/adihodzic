@@ -181,7 +181,11 @@ export default async function CaseStudyPage({
           <h2 className="font-display text-2xl font-semibold tracking-tight sm:text-3xl">
             Outcome
           </h2>
-          <div className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-3">
+          <div
+            className={`mt-6 grid grid-cols-1 gap-6 ${
+              study.outcome.length === 3 ? "sm:grid-cols-3" : "sm:grid-cols-2"
+            }`}
+          >
             {study.outcome.map((o) => (
               <div key={o.label} className="rounded-2xl border border-border p-6">
                 <p

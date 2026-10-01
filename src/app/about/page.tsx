@@ -61,7 +61,7 @@ const projects = [
     period: "Apr 2025 - Aug 2025",
   },
   {
-    company: "US Wealth Management Firm",
+    company: "Wealth-management SaaS",
     role: "Lead Product Designer",
     period: "May 2023 - Jul 2026",
   },
@@ -77,7 +77,7 @@ const projects = [
   },
   {
     company: "AB1GK (AB1 Sports)",
-    role: "Product Designer & de facto Product Owner",
+    role: "Product and E-commerce Lead",
     period: "Mar 2019 - ongoing",
   },
 ];
@@ -99,9 +99,10 @@ export default function AboutPage() {
           career inside industries where the complexity is real - regulated
           finance, government and AI-driven automation, nuclear safeguards,
           energy operations, and life sciences. Alongside that, since 2019
-          I&rsquo;ve been the sole product owner for AB1GK, a goalkeeper gear
+          I&rsquo;ve led product and e-commerce for AB1GK, a goalkeeper gear
           brand I helped build from a blank page - discovery through devops,
-          the same person the whole way through. I like the stage of a
+          the same person the whole way through, working directly with the
+          founder. I like the stage of a
           project where the brief is still wrong and somebody has to figure
           out what&rsquo;s actually true before anyone can design anything.
         </p>

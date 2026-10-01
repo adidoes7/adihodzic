@@ -45,7 +45,7 @@ export const caseStudies: CaseStudy[] = [
     title: "Rebuilding the core workflow of a wealth management platform",
     oneLiner:
       "As lead product designer for over three years, I reworked the Checklist advisors relied on throughout every client profile - not a one-time setup step, but the hub they returned to again and again - then built out the design system, recommendation tools, and analytics dashboards on top of it.",
-    company: "US Wealth Management Firm",
+    company: "Wealth-management SaaS",
     role: "Lead Product Designer",
     timeline: "May 2023 - Jul 2026",
     tags: ["Wealth management", "Design systems", "AI-accelerated"],
@@ -96,12 +96,13 @@ export const caseStudies: CaseStudy[] = [
       },
     ],
     outcome: [
+      { metric: "40 min → 9 min", label: "average time for an advisor to complete a full proposal - from data intake and document upload through statement extraction, portfolio aggregation, risk assessment, and analytics - a 78% reduction after the redesign" },
       { metric: "Contextual, not dense", label: "the Checklist redesigned around small, always-forward steps advisors could pick up anytime, instead of one dense page" },
       { metric: "Design system, from zero", label: "full Figma system - typography, tokens, components, icons - plus a Design.md spec for AI agents" },
       { metric: "Faster design exploration", label: "AI-assisted prototyping reduced the time needed to turn ideas into interactive concepts, allowing more directions to be explored with stakeholders before committing to implementation" },
     ],
     outcomeNote:
-      "Described qualitatively - exact adoption and efficiency figures weren't tracked in a form precise enough to cite here.",
+      "The proposal-time figure is the average time advisors spent moving through the full proposal workflow - data intake and document upload, statement extraction and reconciliation, portfolio aggregation and risk assessment, and analytics - before and after the redesign. The other outcomes here are described qualitatively; adoption and efficiency weren't tracked for those in a form precise enough to cite.",
     reflection: [
       "The biggest lesson from working on the same product for more than three years was how much leverage sits in the underlying product model.",
       "Once we understood that the Checklist was something advisors returned to throughout the client lifecycle, rather than a one-time setup flow, many downstream decisions became easier.",
@@ -482,18 +483,18 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     slug: "ab1gk-brand-ecommerce",
-    title: "Building AB1GK's brand and ecommerce business from zero, solo",
+    title: "Building AB1GK's brand and ecommerce experience from zero, solo",
     oneLiner:
-      "Since 2019, I've been the entire product team for AB1GK, the goalkeeper gear brand founded by Premier League goalkeeper Asmir Begovic - designing the brand identity and logo from a blank page, then building and still running the ecommerce business that sells it, alone, from discovery through devops.",
+      "Since 2019, I've led product and e-commerce for AB1GK, the goalkeeper gear brand founded by Premier League goalkeeper Asmir Begovic - designing the brand identity and logo from a blank page, then building and still leading the ecommerce experience that sells it, working directly with the founder, from discovery through devops.",
     company: "AB1GK (AB1 Sports)",
-    role: "Product Designer & de facto Product Owner",
+    role: "Product and E-commerce Lead",
     timeline: "Mar 2019 - ongoing",
     tags: ["Brand identity", "Ecommerce", "0→1"],
     accent: "#b91c1c",
     gradient: ["#450a0a", "#f87171"],
     image: "/images/case-studies/ab1gk/home.png",
     problem:
-      "In March 2019, AB1 didn't exist - no brand, no logo, no website, just a professional goalkeeper's idea to build his own gear company. I designed the brand identity from scratch working directly with founder Asmir Begovic, then designed and built the ecommerce business, launched that November, that would sell it. The real challenge was never any single design problem - it was that I've been the entire product team since day one: discovery, design, development, devops, and now years of ongoing maintenance and marketing, for a real business that today processes hundreds of transactions a day.",
+      "In March 2019, AB1 didn't exist - no brand, no logo, no website, just a professional goalkeeper's idea to build his own gear company. I designed the brand identity from scratch working directly with founder Asmir Begovic, then designed and built the ecommerce platform, launched that November, that would sell it. The real challenge was never any single design problem - it was that I've led product and e-commerce as a one-person team since day one, working directly with the founder: discovery, design, development, devops, and now years of ongoing maintenance and marketing, for a real business that today processes hundreds of transactions a day.",
     context: [
       { label: "Team", value: "Just me, working directly with founder Asmir Begovic" },
       { label: "Scope", value: "Brand identity, logo, ecommerce platform, ongoing product and maintenance" },
@@ -513,26 +514,27 @@ export const caseStudies: CaseStudy[] = [
         title: "Stayed the sole product owner through years of scale and turnover",
         body: "From the first sketch to today, I've owned discovery, design, development, devops, and ongoing maintenance myself, including through periods when the company brought in other leadership. Keeping that end-to-end ownership consistent - instead of letting the product fragment across whoever joined next - is most of why the site still works the way it was designed to.",
       },
+      {
+        title: "Kept redesigning the ecommerce experience long after the initial build",
+        body: "My responsibilities as product and e-commerce lead covered the brand identity, the ecommerce experience, implementation, and ongoing improvements, working directly with founder Asmir Begovic rather than as part of a larger team. One of the clearer threads of that ongoing work was redesigning the landing pages and checkout experience - Google Analytics showed overall conversion increasing from 1.7% to 3.2% afterward, a gain of 1.5 percentage points. Advertising changes ran alongside that redesign too, so it's a combined result, not something I'd attribute to the design work alone.",
+      },
     ],
     decisions: [
-      {
-        title: "Pushed back on a COO and CFO who wanted to move the site backward",
-        body: "In 2020 and 2021, once a COO and CFO joined to grow retailer and UK presence, they pushed for site changes that ran against where the industry - and the underlying technology - was actually heading. I stood my ground, laid out specifically why their proposed direction was outdated and what the forward-looking alternative was, and won that argument. It's the clearest case of my product judgment actually being tested by people with real authority to overrule it, and it held up.",
-      },
       {
         title: "Defended a personal, ownable logo over the safer option",
         body: "The easy version of this logo borrows visual language from established goalkeeper or sportswear brands - it reads as credible immediately, with less risk. I pushed instead for the A/B/1 mark specifically because it couldn't be mistaken for anyone else's, even though that meant more rounds of exploration before it clicked. It's become the one piece of the brand nobody has ever second-guessed since.",
       },
     ],
     outcome: [
-      { metric: "Zero to full brand", label: "identity, logo, and ecommerce business built from nothing, solo, starting in 2019" },
+      { metric: "1.7% → 3.2%", label: "overall site conversion rate per Google Analytics, after redesigning the landing pages and checkout experience - a combined result alongside advertising changes, not attributable to design alone" },
+      { metric: "Zero to full brand", label: "identity, logo, and ecommerce experience built from nothing, solo, starting in 2019" },
       { metric: "Hundreds of orders/day", label: "the store now processes hundreds of transactions daily" },
-      { metric: "One owner, years running", label: "discovery through devops and maintenance, held by one person the entire time" },
+      { metric: "One lead, years running", label: "discovery through devops and maintenance, held by one person as product and e-commerce lead the entire time" },
     ],
     outcomeNote:
-      "Described qualitatively for now - more specific figures on traffic and growth to follow once available.",
+      "The conversion figure is from Google Analytics. Advertising changes ran alongside the landing page and checkout redesign, so this is a combined result, not an improvement attributable to design alone. The other outcomes here are described qualitatively.",
     reflection:
-      "Most product advice assumes you're navigating a team - stakeholders to align, specs to negotiate. Almost none of that applied here; it was just me and a founder who trusted the product side to me completely. That made the one real leadership clash - standing firm against a COO and CFO pushing an outdated direction - more clarifying than any team disagreement could have been. When it's just your judgment against theirs, with no committee to hide behind, you find out quickly whether you actually believe what you're arguing for.",
+      "Most product advice assumes a team around you - other designers to sanity-check decisions, a PM to push back on scope, analysts to separate what your work actually drove from everything else happening at the same time. None of that existed here; it was just me and a founder. The habit that mattered most wasn't any single decision, it was discipline: being honest about what a result like a conversion lift actually came from, when advertising changed in the same window as the design, instead of taking the cleaner version of the story because no one else was there to ask harder questions.",
     screenshots: [
       {
         src: "/images/case-studies/ab1gk/home.png",
