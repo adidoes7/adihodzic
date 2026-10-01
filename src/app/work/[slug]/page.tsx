@@ -63,7 +63,7 @@ export default async function CaseStudyPage({
               ← All work
             </Link>
             <p className="mb-4 text-sm font-medium text-white/80">
-              {study.company} · {study.timeline}
+              {study.role} · {study.company} · {study.timeline}
             </p>
             <h1 className="font-display text-4xl font-semibold leading-[1.05] tracking-tight text-balance sm:text-5xl md:text-6xl">
               {study.title}
