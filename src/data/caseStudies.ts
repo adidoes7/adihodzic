@@ -96,7 +96,7 @@ export const caseStudies: CaseStudy[] = [
       },
     ],
     outcome: [
-      { metric: "40 min → 9 min", label: "average time for an advisor to complete a full proposal - from data intake and document upload through statement extraction, portfolio aggregation, risk assessment, and analytics - a 78% reduction after the redesign" },
+      { metric: "38 min → 12 min", label: "average time for an advisor to complete a full proposal - from data intake and document upload through statement extraction, portfolio aggregation, risk assessment, and analytics - a 68% reduction after the redesign" },
       { metric: "Contextual, not dense", label: "the Checklist redesigned around small, always-forward steps advisors could pick up anytime, instead of one dense page" },
       { metric: "Design system, from zero", label: "full Figma system - typography, tokens, components, icons - plus a Design.md spec for AI agents" },
       { metric: "Faster design exploration", label: "AI-assisted prototyping reduced the time needed to turn ideas into interactive concepts, allowing more directions to be explored with stakeholders before committing to implementation" },
