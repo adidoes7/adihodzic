@@ -4,16 +4,16 @@ import { motion, useMotionValue, useSpring, AnimatePresence } from "framer-motio
 import { useRef, useState, type MouseEvent } from "react";
 import Magnetic from "@/components/Magnetic";
 
-const words = ["Graphic", "design", "for", "brands", "where", "identity", "is", "the", "whole", "job."];
-const ACCENT_WORD = "identity";
+const words = ["Websites,", "brand", "identities", "and", "campaigns."];
+const ACCENT_WORD = "identities";
 
 const TICKER_ITEMS = [
+  "WEB DESIGN",
+  "E-COMMERCE",
   "BRAND IDENTITY",
+  "CAMPAIGNS",
   "PRINT",
   "PACKAGING",
-  "ILLUSTRATION",
-  "DIGITAL",
-  "MARKETING",
 ];
 const TICKER_COLORS = ["#ff4fa3", "#8b5cf6", "#22d3ee", "#fbbf24", "#34d399", "#ff4611"];
 
@@ -169,7 +169,7 @@ export default function CreativeHero() {
           className="mb-6 flex items-center gap-2 text-sm font-medium text-white/70"
         >
           <span className="h-2 w-2 rounded-full bg-[#ff4fa3]" />
-          Brand &amp; Visual Designer · Identity, Print, and Digital Design Work
+          Web &amp; Visual Design · Websites, E-commerce &amp; Brand Identity
         </motion.p>
 
         <h1 className="max-w-[960px] font-display text-5xl font-semibold leading-[1.05] tracking-tight text-balance text-white sm:text-6xl md:text-7xl lg:text-[5.25rem]">
@@ -204,11 +204,10 @@ export default function CreativeHero() {
           transition={{ duration: 0.6, delay: 0.7 }}
           className="mt-8 max-w-[960px] text-xl text-white/70"
         >
-          I design brand identities and the visual systems that carry them -
-          logos, print, packaging, and marketing work that has to hold up
-          wherever it shows up. It&rsquo;s the same instinct behind AB1GK&rsquo;s
-          identity, built from a blank page, and years of client-facing
-          brand and digital design before it.
+          I design and build websites, shape brand identities and create the
+          campaign visuals that support them. My work spans B2B websites,
+          e-commerce, logos and launch campaigns, with hands-on involvement
+          from the initial direction through implementation.
         </motion.p>
 
         <motion.div
@@ -222,7 +221,7 @@ export default function CreativeHero() {
               href="#work"
               className="inline-block rounded-full bg-white px-6 py-3 text-sm font-medium text-[#0b0a08] transition-transform hover:-translate-y-0.5"
             >
-              See visual work
+              See selected work
             </a>
           </Magnetic>
           <Magnetic>

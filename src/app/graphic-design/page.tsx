@@ -4,7 +4,7 @@ import Reveal from "@/components/Reveal";
 import VisualWorkCard, { type VisualWorkItem } from "@/components/VisualWorkCard";
 
 export const metadata: Metadata = {
-  title: "Graphic & Brand Design",
+  title: "Web & Visual Design",
   description:
     "Brand identity, print, packaging, and visual design work by Adi Hodzic.",
   robots: {
