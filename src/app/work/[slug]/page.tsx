@@ -1,9 +1,11 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import type { Metadata } from "next";
+import { Fragment } from "react";
 import { caseStudies, getCaseStudy } from "@/data/caseStudies";
 import Reveal from "@/components/Reveal";
 import ScrollProgress from "@/components/ScrollProgress";
+import BeforeAfter from "@/components/BeforeAfter";
 
 export function generateStaticParams() {
   return caseStudies.map((study) => ({ slug: study.slug }));
@@ -116,7 +118,12 @@ export default async function CaseStudyPage({
                   <h3 className="text-lg font-semibold">{step.title}</h3>
                   <div className="mt-2 space-y-3 leading-relaxed text-muted">
                     {(Array.isArray(step.body) ? step.body : [step.body]).map((para, j) => (
-                      <p key={j}>{para}</p>
+                      <Fragment key={j}>
+                        <p>{para}</p>
+                        {step.comparison && step.comparison.afterParagraph === j && (
+                          <BeforeAfter panels={step.comparison.panels} />
+                        )}
+                      </Fragment>
                     ))}
                   </div>
                 </div>

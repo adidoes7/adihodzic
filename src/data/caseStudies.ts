@@ -18,6 +18,15 @@ export type CaseStudy = {
   process: {
     title: string;
     body: string | string[];
+    comparison?: {
+      afterParagraph: number;
+      panels: {
+        label: string;
+        src: string;
+        alt: string;
+        caption: string;
+      }[];
+    };
   }[];
   decisions: {
     title: string;
@@ -44,7 +53,7 @@ export const caseStudies: CaseStudy[] = [
     slug: "wealth-management-platform",
     title: "Rebuilding the core workflow of a wealth management platform",
     oneLiner:
-      "As lead product designer for over three years, I reworked the Checklist advisors relied on throughout every client profile - not a one-time setup step, but the hub they returned to again and again - then built out the design system, recommendation tools, and analytics dashboards on top of it.",
+      "For over three years, I led design across financial planning workflows, portfolio recommendations and analytics. I replaced a central Checklist with contextual next steps that helped advisors continue work throughout a client’s lifecycle. Average proposal completion time fell from 38 to 12 minutes following the redesign.",
     company: "Wealth-management SaaS",
     role: "Lead Product Designer",
     timeline: "May 2023 - Jul 2026",
@@ -69,6 +78,23 @@ export const caseStudies: CaseStudy[] = [
           "I mapped where people were getting blocked, particularly around document processing and statement extraction, and redesigned the experience around smaller contextual actions. Instead of sending advisors back to one dense page, the relevant next step could appear where they were already working.",
           "The important decision wasn't making the Checklist visually simpler. It was changing the underlying interaction model once the way advisors actually used the product became clear.",
         ],
+        comparison: {
+          afterParagraph: 2,
+          panels: [
+            {
+              label: "Before",
+              src: "/images/case-studies/wealth-platform/checklist.jpg",
+              alt: "The original Checklist showing Step 1 Investment Data tasks listed together in one place",
+              caption: "A central Checklist brought multiple tasks into one place, but interrupted advisors returning to ongoing work.",
+            },
+            {
+              label: "After",
+              src: "/images/case-studies/wealth-platform/profile-empty.jpg",
+              alt: "Profile Dashboard Next Steps panel showing actionable prompts to upload statements and set a risk level",
+              caption: "Contextual next steps let advisors continue relevant tasks from the Profile Dashboard.",
+            },
+          ],
+        },
       },
       {
         title: "Built the platform's first design system, then made it legible to AI agents",
@@ -112,16 +138,6 @@ export const caseStudies: CaseStudy[] = [
       "This project is under NDA - the company name and product branding have been withheld, and all screens shown have had logos removed.",
     screenshots: [
       {
-        src: "/images/case-studies/wealth-platform/checklist.jpg",
-        alt: "The original inherited Checklist, broken into Investment Data, Analysis, and Proposal steps, with product branding blurred",
-        caption: "The Checklist I inherited - already broken into steps, but still asking for too much at once every time advisors came back to it, with dead ends like stalled statement extraction.",
-      },
-      {
-        src: "/images/case-studies/wealth-platform/profile-empty.jpg",
-        alt: "Redesigned empty-state Profile Dashboard showing contextual Next Steps prompts advisors can act on wherever they already are, with product branding blurred",
-        caption: "The reworked approach - instead of one dense Checklist page, the relevant next step surfaces as a contextual prompt right on the dashboard, wherever the advisor already is.",
-      },
-      {
         src: "/images/case-studies/wealth-platform/overview.jpg",
         alt: "Profile Dashboard showing the most important parts of a client's profile - portfolio overview, risk tolerance, fee report, and current allocation, with product branding blurred",
         caption: "The Profile Dashboard once data is in - fitting everything advisors needed into one structured view, without the overlapping, freely-resizable widgets stakeholders originally wanted.",
@@ -135,6 +151,87 @@ export const caseStudies: CaseStudy[] = [
         src: "/images/case-studies/wealth-platform/tax-transition.jpg",
         alt: "Tax transition model showing lot-level trade values and computed tax costs against advisor-set constraints, with product branding blurred",
         caption: "The tax transition model inside the Recommendation Creator - real constraints in, per-trade tax cost out, at the tax-lot level.",
+      },
+    ],
+  },
+  {
+    slug: "gov-workflow-automation",
+    title: "Designing AI-powered form-to-workflow automation for government teams",
+    oneLiner:
+      "I designed AI-assisted document and workflow creation for non-technical government teams, covering bulk upload, review of extracted fields, workflow generation and API configuration. The work focused on making complex setup easier to follow while allowing users to review and correct AI-generated output.",
+    company: "Government Workflow Automation Platform",
+    role: "Lead Product Designer",
+    timeline: "Dec 2025 - Apr 2026 · 5 months",
+    tags: ["AI-assisted design", "GovTech", "Workflow automation"],
+    accent: "#6d28d9",
+    gradient: ["#4c1d95", "#c4b5fd"],
+    image: "/images/case-studies/gov-workflow-platform/gov-import-modal-crop.jpg",
+    confidentialityNote:
+      "This project is under NDA - the company name and product branding have been withheld. One screen below is a real product screen with the logo blurred; the other two are illustrative mockups I rebuilt to show the design patterns accurately, not real product screens.",
+    problem:
+      "Before I joined, the platform already had an AI/OCR engine that could read an uploaded document and recreate it digitally - but the interface around it was old, and turning that into a working workflow was entirely manual: upload a file, manually check every extracted field, then manually build the workflow phase by phase, as three separate steps. The client wanted fewer steps, with AI doing more of the work. The bigger challenge sat in two places I ended up owning end to end: an API builder that had to fit a lot of dependent, service-specific configuration without overwhelming a non-technical user, and a workflow canvas that had to stay legible even once AI started generating most of a flow automatically instead of a person building it node by node.",
+    context: [
+      { label: "Team", value: "Product managers, engineers, and an AI/ML team" },
+      { label: "Scope", value: "Bulk upload & AI-generated workflows, API builder, workflow canvas" },
+      { label: "Constraint", value: "End users were non-technical government staff, not developers" },
+      { label: "Duration", value: "5 months, Dec 2025 - Apr 2026" },
+    ],
+    process: [
+      {
+        title: "Replaced a three-step manual process with bulk upload and an AI prompt",
+        body: "Before this redesign, creating a workflow meant uploading a file, manually checking every extracted field, then manually building the workflow phases - three separate manual stages. I added a bulk upload option and a short wizard where you map fields and describe what you want in a plain-language prompt, then let AI generate a first-pass workflow with suggestions instead of leaving every step to be built by hand.",
+      },
+      {
+        title: "Designed the API builder around dependent steps instead of one static form",
+        body: "The API builder had to hold a lot: which service to connect, service-specific configuration that changes based on that choice, an AI chat for in-context help, and the ability to move back and forth between steps without losing progress. I structured it so later steps are generated based on earlier choices, instead of trying to show every possible option at once.",
+      },
+      {
+        title: "Rebuilt the workflow canvas to stay legible as flows got AI-generated",
+        body: "Once workflows could be generated automatically by AI instead of built node by node, the canvas needed to stay easy to scan even as it filled up fast. I kept it as a flat, flowchart-style graph - clear branches, labeled paths like Approve and Decline - and tightened the visual language so it read as a clean, modern automation tool instead of a dense diagram.",
+      },
+    ],
+    decisions: [
+      {
+        title: "Tested the drawer against the real configuration complexity",
+        body: [
+          "The initial direction for the API builder was a persistent side drawer. Before committing to it, I prototyped the experience using the actual service-specific configuration, dependencies and navigation users would need.",
+          "Once real content was introduced, the drawer became too constrained. A step-based modal gave each decision enough space, made dependencies between steps clearer, and still allowed users to move backward without losing progress.",
+          "Comparing the two approaches against the real content made the trade-off clear, and we aligned on the multi-step model.",
+        ],
+      },
+      {
+        title: "Used AI-assisted prototypes to make implementation discussions more concrete",
+        body: [
+          "AI-assisted prototypes were still new to parts of the engineering team, so I didn't treat them as a replacement for established handoff practices.",
+          "I used them to demonstrate interactions, states and edge cases earlier, then supported them with the specifications and communication engineers needed for implementation.",
+          "That let me keep the speed of coded exploration without making the development process depend on a new tool or workflow the team hadn't adopted yet.",
+        ],
+      },
+    ],
+    outcome: [
+      { metric: "3 steps to 1 prompt", label: "collapsed a manual upload-check-build process into bulk upload plus a single AI-generated first pass" },
+      { metric: "Complex configuration, broken into clear dependent steps", label: "shipped a multi-step, dependent-step modal instead of the originally preferred drawer, after proving it fit the real complexity better" },
+      { metric: "AI-generated, still legible", label: "workflow canvas redesigned to stay scannable even when AI generated most of a flow automatically" },
+    ],
+    outcomeNote:
+      "Described qualitatively - exact adoption and efficiency figures weren't tracked in a form precise enough to cite here.",
+    reflection:
+      "Client preference and the original spec both pointed toward a drawer for the API builder, and I still ended up arguing against it - not because the reasoning behind it was wrong in the abstract, but because it didn't hold up once real content got poured into it. That's the pattern I'd trust more of going forward: treat even well-reasoned direction as a hypothesis until it's been tested against the actual number of options and steps a real user needs, not the ideal case.",
+    screenshots: [
+      {
+        src: "/images/case-studies/gov-workflow-platform/gov-upload-modal.jpg",
+        alt: "Real product screen showing the Import from PDF modal with bulk upload and an AI prompt field for generating a workflow, with logo blurred",
+        caption: "The real Import from PDF modal (logo blurred) - bulk upload plus an AI prompt that generates a first-pass workflow automatically.",
+      },
+      {
+        src: "/images/case-studies/gov-workflow-platform/api-builder-modal.jpg",
+        alt: "Illustrative mockup of the API builder as a multi-step modal wizard with dependent configuration steps and an integrated AI chat panel",
+        caption: "Illustrative mockup of the API builder as a multi-step modal, with dependent configuration steps, integrated AI chat, and back-and-forth navigation.",
+      },
+      {
+        src: "/images/case-studies/gov-workflow-platform/workflow-canvas.jpg",
+        alt: "Illustrative mockup of a flat workflow automation canvas with labeled branching paths like Approve and Decline",
+        caption: "The workflow canvas, redesigned to stay legible as flows became AI-generated instead of hand-built.",
       },
     ],
   },
@@ -397,87 +494,6 @@ export const caseStudies: CaseStudy[] = [
         src: "/images/case-studies/life-sciences-project-platform/documents-dashboard.jpg",
         alt: "Documents dashboard showing lifecycle stage breakdown, workflow status chart, and a filterable table of documents in active workflow, with logo blurred",
         caption: "The documents dashboard - lifecycle stage and workflow charts up top, with a filterable, status-coded table underneath for the detail layer.",
-      },
-    ],
-  },
-  {
-    slug: "gov-workflow-automation",
-    title: "Designing AI-powered form-to-workflow automation for government teams",
-    oneLiner:
-      "As lead product designer, I collapsed a manual upload-check-build process into bulk upload and an AI prompt, then designed the API builder and workflow canvas that turned government paperwork into automated, AI-generated workflows.",
-    company: "Government Workflow Automation Platform",
-    role: "Lead Product Designer",
-    timeline: "Dec 2025 - Apr 2026 · 5 months",
-    tags: ["AI-assisted design", "GovTech", "Workflow automation"],
-    accent: "#6d28d9",
-    gradient: ["#4c1d95", "#c4b5fd"],
-    image: "/images/case-studies/gov-workflow-platform/gov-upload-modal.jpg",
-    confidentialityNote:
-      "This project is under NDA - the company name and product branding have been withheld. One screen below is a real product screen with the logo blurred; the other two are illustrative mockups I rebuilt to show the design patterns accurately, not real product screens.",
-    problem:
-      "Before I joined, the platform already had an AI/OCR engine that could read an uploaded document and recreate it digitally - but the interface around it was old, and turning that into a working workflow was entirely manual: upload a file, manually check every extracted field, then manually build the workflow phase by phase, as three separate steps. The client wanted fewer steps, with AI doing more of the work. The bigger challenge sat in two places I ended up owning end to end: an API builder that had to fit a lot of dependent, service-specific configuration without overwhelming a non-technical user, and a workflow canvas that had to stay legible even once AI started generating most of a flow automatically instead of a person building it node by node.",
-    context: [
-      { label: "Team", value: "Product managers, engineers, and an AI/ML team" },
-      { label: "Scope", value: "Bulk upload & AI-generated workflows, API builder, workflow canvas" },
-      { label: "Constraint", value: "End users were non-technical government staff, not developers" },
-      { label: "Duration", value: "5 months, Dec 2025 - Apr 2026" },
-    ],
-    process: [
-      {
-        title: "Replaced a three-step manual process with bulk upload and an AI prompt",
-        body: "Before this redesign, creating a workflow meant uploading a file, manually checking every extracted field, then manually building the workflow phases - three separate manual stages. I added a bulk upload option and a short wizard where you map fields and describe what you want in a plain-language prompt, then let AI generate a first-pass workflow with suggestions instead of leaving every step to be built by hand.",
-      },
-      {
-        title: "Designed the API builder around dependent steps instead of one static form",
-        body: "The API builder had to hold a lot: which service to connect, service-specific configuration that changes based on that choice, an AI chat for in-context help, and the ability to move back and forth between steps without losing progress. I structured it so later steps are generated based on earlier choices, instead of trying to show every possible option at once.",
-      },
-      {
-        title: "Rebuilt the workflow canvas to stay legible as flows got AI-generated",
-        body: "Once workflows could be generated automatically by AI instead of built node by node, the canvas needed to stay easy to scan even as it filled up fast. I kept it as a flat, flowchart-style graph - clear branches, labeled paths like Approve and Decline - and tightened the visual language so it read as a clean, modern automation tool instead of a dense diagram.",
-      },
-    ],
-    decisions: [
-      {
-        title: "Tested the drawer against the real configuration complexity",
-        body: [
-          "The initial direction for the API builder was a persistent side drawer. Before committing to it, I prototyped the experience using the actual service-specific configuration, dependencies and navigation users would need.",
-          "Once real content was introduced, the drawer became too constrained. A step-based modal gave each decision enough space, made dependencies between steps clearer, and still allowed users to move backward without losing progress.",
-          "Comparing the two approaches against the real content made the trade-off clear, and we aligned on the multi-step model.",
-        ],
-      },
-      {
-        title: "Used AI-assisted prototypes to make implementation discussions more concrete",
-        body: [
-          "AI-assisted prototypes were still new to parts of the engineering team, so I didn't treat them as a replacement for established handoff practices.",
-          "I used them to demonstrate interactions, states and edge cases earlier, then supported them with the specifications and communication engineers needed for implementation.",
-          "That let me keep the speed of coded exploration without making the development process depend on a new tool or workflow the team hadn't adopted yet.",
-        ],
-      },
-    ],
-    outcome: [
-      { metric: "3 steps to 1 prompt", label: "collapsed a manual upload-check-build process into bulk upload plus a single AI-generated first pass" },
-      { metric: "Complex configuration, broken into clear dependent steps", label: "shipped a multi-step, dependent-step modal instead of the originally preferred drawer, after proving it fit the real complexity better" },
-      { metric: "AI-generated, still legible", label: "workflow canvas redesigned to stay scannable even when AI generated most of a flow automatically" },
-    ],
-    outcomeNote:
-      "Described qualitatively - exact adoption and efficiency figures weren't tracked in a form precise enough to cite here.",
-    reflection:
-      "Client preference and the original spec both pointed toward a drawer for the API builder, and I still ended up arguing against it - not because the reasoning behind it was wrong in the abstract, but because it didn't hold up once real content got poured into it. That's the pattern I'd trust more of going forward: treat even well-reasoned direction as a hypothesis until it's been tested against the actual number of options and steps a real user needs, not the ideal case.",
-    screenshots: [
-      {
-        src: "/images/case-studies/gov-workflow-platform/gov-upload-modal.jpg",
-        alt: "Real product screen showing the Import from PDF modal with bulk upload and an AI prompt field for generating a workflow, with logo blurred",
-        caption: "The real Import from PDF modal (logo blurred) - bulk upload plus an AI prompt that generates a first-pass workflow automatically.",
-      },
-      {
-        src: "/images/case-studies/gov-workflow-platform/api-builder-modal.jpg",
-        alt: "Illustrative mockup of the API builder as a multi-step modal wizard with dependent configuration steps and an integrated AI chat panel",
-        caption: "The API builder as a multi-step modal, with dependent configuration steps, integrated AI chat, and back-and-forth navigation.",
-      },
-      {
-        src: "/images/case-studies/gov-workflow-platform/workflow-canvas.jpg",
-        alt: "Illustrative mockup of a flat workflow automation canvas with labeled branching paths like Approve and Decline",
-        caption: "The workflow canvas, redesigned to stay legible as flows became AI-generated instead of hand-built.",
       },
     ],
   },
