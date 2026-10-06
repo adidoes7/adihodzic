@@ -13,7 +13,22 @@ export const metadata: Metadata = {
   },
 };
 
-const visualWork: VisualWorkItem[] = [
+const websites: VisualWorkItem[] = [
+  {
+    title: "AB1GK e-commerce",
+    description:
+      "The storefront for a goalkeeper gear brand, with product pages, pricing, checkout and payment flows designed and built from the ground up, and still running today.",
+    tags: ["E-commerce", "WooCommerce"],
+    gradient: ["#450a0a", "#f87171"],
+    image: "/images/graphic-design/ab1gk-ecommerce-storefront.jpg",
+    imageFit: "cover",
+    imagePosition: "top",
+    href: "/work/ab1gk-brand-ecommerce",
+    size: "large",
+  },
+];
+
+const brandAndCampaigns: VisualWorkItem[] = [
   {
     title: "AB1GK - a logo that's also a number",
     description:
@@ -44,27 +59,6 @@ const visualWork: VisualWorkItem[] = [
     imageFit: "cover",
     href: "/graphic-design/logos",
   },
-  {
-    title: "Print & Editorial Design",
-    description:
-      "Layout and typography for print and editorial pieces, where a grid has to hold up on paper as well as it does on screen.",
-    tags: ["Print", "Editorial"],
-    gradient: ["#172554", "#93c5fd"],
-  },
-  {
-    title: "Packaging Design",
-    description:
-      "Structural and visual design for physical packaging - where a brand has to survive being held, not just viewed.",
-    tags: ["Packaging", "Structural"],
-    gradient: ["#052e16", "#86efac"],
-  },
-  {
-    title: "Illustration & Iconography",
-    description:
-      "Custom illustration and icon work built to carry a brand's voice into the small, detailed moments.",
-    tags: ["Illustration", "Iconography"],
-    gradient: ["#451a03", "#fdba74"],
-  },
 ];
 
 export default function GraphicDesignPage() {
@@ -74,18 +68,25 @@ export default function GraphicDesignPage() {
 
       <section id="work" className="mx-auto max-w-6xl px-6 py-16 sm:px-8 sm:py-24">
         <Reveal>
-          <div className="mb-12">
-            <h2 className="font-display text-3xl font-semibold tracking-tight sm:text-4xl">
-              Selected visual work
-            </h2>
-            <p className="mt-3 max-w-2xl text-muted">
-              A running index of brand, print, packaging, and digital design
-              work - updated as pieces get added.
-            </p>
-          </div>
+          <h2 className="font-display text-3xl font-semibold tracking-tight sm:text-4xl">
+            Websites &amp; E-commerce
+          </h2>
         </Reveal>
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {visualWork.map((item, i) => (
+        <div className="mt-10 grid gap-8 md:grid-cols-2">
+          {websites.map((item, i) => (
+            <Reveal key={item.title} delay={i * 0.06}>
+              <VisualWorkCard item={item} />
+            </Reveal>
+          ))}
+        </div>
+
+        <Reveal className="mt-20">
+          <h2 className="font-display text-3xl font-semibold tracking-tight sm:text-4xl">
+            Brand &amp; Campaign Design
+          </h2>
+        </Reveal>
+        <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          {brandAndCampaigns.map((item, i) => (
             <Reveal key={item.title} delay={i * 0.06}>
               <VisualWorkCard item={item} />
             </Reveal>

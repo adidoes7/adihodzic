@@ -9,13 +9,16 @@ type VisualWorkItem = {
   imageFit?: "contain" | "cover";
   imagePosition?: string;
   href?: string;
+  size?: "default" | "large";
 };
 
 export default function VisualWorkCard({ item }: { item: VisualWorkItem }) {
+  const large = item.size === "large";
+
   const card = (
     <div className="overflow-hidden rounded-3xl border border-border bg-surface transition-transform hover:-translate-y-1">
       <div
-        className="relative flex h-40 items-center justify-center"
+        className={`relative flex items-center justify-center ${large ? "h-56 sm:h-72" : "h-40"}`}
         style={{
           background: `linear-gradient(135deg, ${item.gradient[0]}, ${item.gradient[1]})`,
         }}
@@ -40,7 +43,7 @@ export default function VisualWorkCard({ item }: { item: VisualWorkItem }) {
             />
           ))}
       </div>
-      <div className="p-6">
+      <div className={large ? "p-8" : "p-6"}>
         <div className="mb-3 flex flex-wrap gap-2">
           {item.tags.map((tag) => (
             <span
@@ -51,10 +54,14 @@ export default function VisualWorkCard({ item }: { item: VisualWorkItem }) {
             </span>
           ))}
         </div>
-        <h3 className="font-display text-xl font-semibold tracking-tight">
+        <h3
+          className={`font-display font-semibold tracking-tight ${large ? "text-2xl sm:text-3xl" : "text-xl"}`}
+        >
           {item.title}
         </h3>
-        <p className="mt-2 text-sm leading-relaxed text-muted">
+        <p
+          className={`mt-2 leading-relaxed text-muted ${large ? "text-base" : "text-sm"}`}
+        >
           {item.description}
         </p>
         {item.href && (
