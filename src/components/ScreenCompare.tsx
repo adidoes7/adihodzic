@@ -16,7 +16,7 @@ export default function ScreenCompare({
   cols,
 }: {
   screens: Screen[];
-  cols: 2 | 3;
+  cols: 1 | 2 | 3;
 }) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   const open = openIndex !== null ? screens[openIndex] : null;
@@ -38,7 +38,7 @@ export default function ScreenCompare({
     <>
       <div
         className={`grid grid-cols-1 items-start gap-6 ${
-          cols === 3 ? "sm:grid-cols-3" : "sm:grid-cols-2"
+          cols === 3 ? "sm:grid-cols-3" : cols === 2 ? "sm:grid-cols-2" : ""
         }`}
       >
         {screens.map((s, i) => (
