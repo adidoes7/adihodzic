@@ -20,9 +20,7 @@ const projects: VisualWorkItem[] = [
       "Submitting, tracking, and reviewing compliance requests on mobile, designed with a colleague at ROKOLabs.",
     tags: ["FinTech / RegTech", "UX/UI Design"],
     gradient: ["#061e2c", "#5fa8c9"],
-    image: "/images/case-studies/complysci/screens/02-employee-requests.png",
-    imageFit: "cover",
-    imagePosition: "top",
+    image: "/images/case-studies/complysci/screens/11-admin-trade-review.png",
     href: "/work/complysci",
   },
   {
@@ -31,9 +29,7 @@ const projects: VisualWorkItem[] = [
       "A mobile redesign of Tally Energy's monitoring platform, covering pad status, live charts, and operational statistics.",
     tags: ["Energy Operations", "UX/UI Design"],
     gradient: ["#0a1a12", "#4fa87a"],
-    image: "/images/case-studies/fracstream-mobile/screens/01-pad-frac.png",
-    imageFit: "cover",
-    imagePosition: "top",
+    image: "/images/case-studies/fracstream-mobile/screens/03-stats-overview.png",
     href: "/work/fracstream-mobile",
   },
 ];
