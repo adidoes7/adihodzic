@@ -39,7 +39,7 @@ export default function VisualWorkCard({ item }: { item: VisualWorkItem }) {
               src={item.image}
               alt=""
               aria-hidden
-              className="h-[78%] w-auto object-contain"
+              className={`${large ? "h-[92%]" : "h-[78%]"} w-auto object-contain`}
             />
           ))}
       </div>

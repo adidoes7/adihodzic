@@ -22,6 +22,7 @@ const projects: VisualWorkItem[] = [
     gradient: ["#061e2c", "#5fa8c9"],
     image: "/images/case-studies/complysci/screens/11-admin-trade-review.png",
     href: "/work/complysci",
+    size: "large",
   },
   {
     title: "FracStream Mobile",
@@ -31,6 +32,7 @@ const projects: VisualWorkItem[] = [
     gradient: ["#0a1a12", "#4fa87a"],
     image: "/images/case-studies/fracstream-mobile/screens/03-stats-overview.png",
     href: "/work/fracstream-mobile",
+    size: "large",
   },
 ];
 
